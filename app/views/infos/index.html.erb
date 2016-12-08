@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+<div class="container well">
+<h1 class="well">Infos</h1>
+
+<table>
+  <thead class="well">
+    <tr class="cntr">
+      <th class="cntr">Name</th>
+      <th class="cntr">Monitor</th>
+      <th class="cntr">Motherboard</th>
+      <th class="cntr">Processor</th>
+      <th class="cntr">Ram</th>
+      <th class="cntr">Hdd</th>
+      <th class="cntr">Cabinet</th>
+      <th class="cntr">Keyboard</th>
+      <th class="cntr">Mouse</th>
+      <th class="cntr">Mousepad</th>
+      <th class="cntr">Camera</th>
+      <th class="cntr">Speaker</th>
+      <th class="cntr">Headphone</th>
+      <th colspan="3" class="cntr">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody class="well">
+    <% @infos.each do |info| %>
+      <tr>
+        <td><%= info.name %></td>
+        <td><%= info.monitor %></td>
+        <td><%= info.motherboard %></td>
+        <td><%= info.processor %></td>
+        <td><%= info.ram %></td>
+        <td><%= info.hdd %></td>
+        <td><%= info.cabinet %></td>
+        <td><%= info.keyboard %></td>
+        <td><%= info.mouse %></td>
+        <td><%= info.mousepad %></td>
+        <td><%= info.camera %></td>
+        <td><%= info.speaker %></td>
+        <td><%= info.headphone %></td>
+        <td><%= link_to 'Show', info, class: "btn btn-primary" %></td>
+        <td><%= link_to 'Edit', edit_info_path(info), class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', info, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+  <div class = "well col-md-7">
+    <%= link_to 'New Info', new_info_path, class: "btn btn-primary" %>
+    <%= link_to 'Download CSV', download_csv_infos_path(format: 'csv'), class: "btn btn-primary" %>
+
+    <%= form_tag import_infos_path, multipart: true, style: "display: inline-block !important;" do %>
+      <%= file_field_tag :file, style: "display: inline-block !important;" %>
+      <%= submit_tag "Upload CSV", class: " btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+<%#= link_to 'Upload CSV', info_import_csv_path(format: 'csv'), class: "btn btn-primary" %>

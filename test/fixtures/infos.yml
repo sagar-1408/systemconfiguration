@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  monitor: MyString
+  motherboard: MyString
+  processor: MyString
+  ram: MyString
+  hdd: MyString
+  cabinet: MyString
+  keyboard: MyString
+  mouse: MyString
+  mousepad: MyString
+  camera: MyString
+  speaker: MyString
+
+two:
+  name: MyString
+  monitor: MyString
+  motherboard: MyString
+  processor: MyString
+  ram: MyString
+  hdd: MyString
+  cabinet: MyString
+  keyboard: MyString
+  mouse: MyString
+  mousepad: MyString
+  camera: MyString
+  speaker: MyString

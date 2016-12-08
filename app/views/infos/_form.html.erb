@@ -1,0 +1,81 @@
+<%= form_for(info, html: {class: "container well col-md-4"}) do |f| %>
+  <% if info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(info.errors.count, "error") %> prohibited this info from being saved:</h2>
+
+      <ul>
+      <% info.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :monitor %>
+    <%= f.text_field :monitor, class: "form-control"  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :motherboard %>
+    <%= f.text_field :motherboard, class: "form-control"  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :processor %>
+    <%= f.text_field :processor, class: "form-control"  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ram %>
+    <%= f.text_field :ram, class: "form-control"  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hdd %>
+    <%= f.text_field :hdd, class: "form-control"  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cabinet %>
+    <%= f.text_field :cabinet, class: "form-control"  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :keyboard %>
+    <%= f.text_field :keyboard, class: "form-control"  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mouse %>
+    <%= f.text_field :mouse, class: "form-control"  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :mousepad %>
+    <%#= f.text_field :mousepad, class: "form-control"  %>
+    <%= f.radio_button :mousepad, "Yes" %> Yes
+    <%= f.radio_button :mousepad, "No" %> No
+  </div>
+
+  <div class="field">
+    <%= f.label :camera %>
+    <%= f.text_field :camera, class: "form-control"  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :speaker %>
+    <%= f.text_field :speaker, class: "form-control"  %>
+  </div>
+
+  <div class="actions">
+    <!-- <%#= f.submit %> -->
+      <%= button_tag "submit", class: "btn btn-primary" %>
+      <%= link_to 'Back', infos_path, class: "btn btn-danger" %>
+  </div>
+<% end %>

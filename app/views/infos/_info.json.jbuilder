@@ -1,0 +1,2 @@
+json.extract! info, :id, :name, :monitor, :motherboard, :processor, :ram, :hdd, :cabinet, :keyboard, :mouse, :mousepad, :camera, :speaker, :created_at, :updated_at
+json.url info_url(info, format: :json)
