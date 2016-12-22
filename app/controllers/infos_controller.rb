@@ -4,7 +4,14 @@ class InfosController < ApplicationController
   # GET /infos
   # GET /infos.json
   def index
-    @infos = Info.all
+    if params[:search].present?
+      #@infos = Info.find(:all, :conditions => ["name LIKE ? ", "%#{params[:search]}%"])
+      @infos = Info.where("(name || monitor || motherboard || processor || ram || hdd || cabinet || keyboard || mouse || mousepad || camera || speaker || headphone ) ILIKE ?", "%#{params[:search]}%")
+      #@infos = Info.search(params[:search]).all
+    else
+      @infos = Info.all
+    end
+
   end
 
   # GET /infos/1
@@ -39,7 +46,7 @@ class InfosController < ApplicationController
 
   def download_csv
     puts "-------------------------- hello download csv --------------------------"
-    @infos = Info.order(:name)
+    @infos = Info.order(:id)
     respond_to do |format|
         format.html
         format.csv{ send_data @infos.to_csv, filename: "System Configuration.csv" }

@@ -1,10 +1,19 @@
 <p id="notice"><%= notice %></p>
-<div class="container well">
-<h1 class="well">Infos</h1>
 
-<table>
+
+<div class="container well">
+  <div>
+    <%= form_tag infos_path, class: "well pull-right", style: "width:300px;", method: "get" do %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", class: "btn btn-default" %>
+    <% end %>
+  </div>
+<h1 class="">System Configuration</h1>
+
+<table class="pull">
   <thead class="well">
     <tr class="cntr">
+      <th class="cntr">Sr.</th>
       <th class="cntr">Name</th>
       <th class="cntr">Monitor</th>
       <th class="cntr">Motherboard</th>
@@ -25,22 +34,23 @@
   <tbody class="well">
     <% @infos.each do |info| %>
       <tr>
-        <td><%= info.name %></td>
-        <td><%= info.monitor %></td>
-        <td><%= info.motherboard %></td>
-        <td><%= info.processor %></td>
-        <td><%= info.ram %></td>
-        <td><%= info.hdd %></td>
-        <td><%= info.cabinet %></td>
-        <td><%= info.keyboard %></td>
-        <td><%= info.mouse %></td>
-        <td><%= info.mousepad %></td>
-        <td><%= info.camera %></td>
-        <td><%= info.speaker %></td>
-        <td><%= info.headphone %></td>
-        <td><%= link_to 'Show', info, class: "btn btn-primary" %></td>
-        <td><%= link_to 'Edit', edit_info_path(info), class: "btn btn-warning" %></td>
-        <td><%= link_to 'Destroy', info, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <td class="cntr"><%= info.id %></td>
+        <td class="cntr"><%= info.name %></td>
+        <td class="cntr"><%= info.monitor %></td>
+        <td class="cntr"><%= info.motherboard %></td>
+        <td class="cntr"><%= info.processor %></td>
+        <td class="cntr"><%= info.ram %></td>
+        <td class="cntr"><%= info.hdd %></td>
+        <td class="cntr"><%= info.cabinet %></td>
+        <td class="cntr"><%= info.keyboard %></td>
+        <td class="cntr"><%= info.mouse %></td>
+        <td class="cntr"><%= info.mousepad %></td>
+        <td class="cntr"><%= info.camera %></td>
+        <td class="cntr"><%= info.speaker %></td>
+        <td class="cntr"><%= info.headphone %></td>
+        <td class="cntr"><%= link_to 'Show', info, class: "btn btn-primary" %></td>
+        <td class="cntr"><%= link_to 'Edit', edit_info_path(info), class: "btn btn-warning" %></td>
+        <td class="cntr"><%= link_to 'Destroy', info, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -48,7 +58,7 @@
 
 <br>
 
-  <div class = "well col-md-7">
+  <div class = "well col-md-12">
     <%= link_to 'New Info', new_info_path, class: "btn btn-primary" %>
     <%= link_to 'Download CSV', download_csv_infos_path(format: 'csv'), class: "btn btn-primary" %>
 
@@ -57,5 +67,5 @@
       <%= submit_tag "Upload CSV", class: " btn btn-primary" %>
     <% end %>
   </div>
-</div>
-<%#= link_to 'Upload CSV', info_import_csv_path(format: 'csv'), class: "btn btn-primary" %>
+
+  </div>
