@@ -1,64 +1,70 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @info.name %>
-</p>
+<div class="well col-md-4 col-md-offset-4">
+  <!-- <p id="notice"><%#= notice %></p> -->
+  <div class="well">
+    <h2>View Configuration</h2>
+  </div>
 
-<p>
-  <strong>Monitor:</strong>
-  <%= @info.monitor %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @info.name %>
+  </p>
 
-<p>
-  <strong>Motherboard:</strong>
-  <%= @info.motherboard %>
-</p>
+  <p>
+    <strong>Monitor:</strong>
+    <%= @info.monitor %>
+  </p>
 
-<p>
-  <strong>Processor:</strong>
-  <%= @info.processor %>
-</p>
+  <p>
+    <strong>Motherboard:</strong>
+    <%= @info.motherboard %>
+  </p>
 
-<p>
-  <strong>Ram:</strong>
-  <%= @info.ram %>
-</p>
+  <p>
+    <strong>Processor:</strong>
+    <%= @info.processor %>
+  </p>
 
-<p>
-  <strong>Hdd:</strong>
-  <%= @info.hdd %>
-</p>
+  <p>
+    <strong>Ram:</strong>
+    <%= @info.ram %>
+  </p>
 
-<p>
-  <strong>Cabinet:</strong>
-  <%= @info.cabinet %>
-</p>
+  <p>
+    <strong>Hdd:</strong>
+    <%= @info.hdd %>
+  </p>
 
-<p>
-  <strong>Keyboard:</strong>
-  <%= @info.keyboard %>
-</p>
+  <p>
+    <strong>Cabinet:</strong>
+    <%= @info.cabinet %>
+  </p>
 
-<p>
-  <strong>Mouse:</strong>
-  <%= @info.mouse %>
-</p>
+  <p>
+    <strong>Keyboard:</strong>
+    <%= @info.keyboard %>
+  </p>
 
-<p>
-  <strong>Mousepad:</strong>
-  <%= @info.mousepad %>
-</p>
+  <p>
+    <strong>Mouse:</strong>
+    <%= @info.mouse %>
+  </p>
 
-<p>
-  <strong>Camera:</strong>
-  <%= @info.camera %>
-</p>
+  <p>
+    <strong>Mousepad:</strong>
+    <%= @info.mousepad %>
+  </p>
 
-<p>
-  <strong>Speaker:</strong>
-  <%= @info.speaker %>
-</p>
+  <p>
+    <strong>Camera:</strong>
+    <%= @info.camera %>
+  </p>
 
-<%= link_to 'Edit', edit_info_path(@info) %> |
-<%= link_to 'Back', infos_path %>
+  <p>
+    <strong>Speaker:</strong>
+    <%= @info.speaker %>
+  </p>
+
+  <%= link_to 'Edit', edit_info_path(@info), class: "btn btn-warning" %>
+  <%= link_to 'Back', infos_path, class: "btn btn-primary" %>
+</div>
