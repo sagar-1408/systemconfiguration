@@ -8,11 +8,36 @@
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href='https://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+    <%= favicon_link_tag 'icon_computer.png', :rel => 'shortcut icon' %>
   </head>
 
   <body>
+    <%= nav_bar fixed: :top, brand: "<span class='text-default'>System Configuration".upcase.html_safe, responsive: true do %>
+      <%= menu_group do %>
+        <%= menu_divider %>
+      <% end %>
+        <%= menu_group pull: :right do %>
+          <% if current_user %>
+            <%= menu_item "<i class='glyphicon glyphicon-user' aria-hidden='true'></i> #{current_user.email}".html_safe %>
+            <%= menu_item "<i class='glyphicon glyphicon-log-out' aria-hidden='true'></i> Log Out".html_safe, destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= menu_item '<i class="glyphicon glyphicon-log-in" aria-hidden="true"></i>&nbsp;Login'.html_safe, new_user_session_path %>
+          <% end %>
+        <% end %>
+    <% end %>
+    <br>
     <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <p id="alert"><%= alert %></p>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="row col-md-12">
+        <div class="col-lg-12">
+            <%= yield %>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>&copy; Company 2016 <span class="pull-right"> powered By - Vebuin Inc. </span></p>
+    </footer>
   </body>
 </html>
