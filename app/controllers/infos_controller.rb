@@ -9,7 +9,7 @@ class InfosController < ApplicationController
       @infos = Info.where("(name || monitor || motherboard || processor || ram || hdd || cabinet || keyboard || mouse || mousepad || camera || speaker || headphone ) ILIKE ?", "%#{params[:search]}%")
       #@infos = Info.search(params[:search]).all
     else
-      @infos = Info.all
+      @infos = Info.order(:id)
     end
 
   end
