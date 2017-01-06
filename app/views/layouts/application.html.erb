@@ -18,6 +18,22 @@
         <%= menu_divider %>
       <% end %>
         <%= menu_group pull: :right do %>
+          <%# if user_signed_in? %>
+            <%#= drop_down "<i class='fa fa-bars' aria-hidden='true'></i> Menu".html_safe do %>
+              <!-- <div class="row">
+                <div class="col-lg-4">
+                  <strong class="text-default">Operations</strong><hr> -->
+                    <%#= menu_item "New Information", new_info_path %>
+                <!-- </div>
+                <div class="col-lg-4">
+                <strong class="text-default">Exports</strong><hr> -->
+                  <%#= menu_item "Upload CSV", "#" %>
+                  <%#= menu_item "Download CSV", "#" %>
+                  <%#= menu_item "Download PDF", "#" %>
+                <!-- </div>
+              </div> -->
+            <%# end %>
+          <%# end %>
           <% if current_user %>
             <%= menu_item "<i class='glyphicon glyphicon-user' aria-hidden='true'></i> #{current_user.email}".html_safe %>
             <%= menu_item "<i class='glyphicon glyphicon-log-out' aria-hidden='true'></i> Log Out".html_safe, destroy_user_session_path, method: :delete %>
@@ -26,12 +42,13 @@
           <% end %>
         <% end %>
     <% end %>
-    <br>
+    <br><br>
     <p class="notice"><%= notice %></p>
     <p id="alert"><%= alert %></p>
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <div class="row col-md-12">
         <div class="col-lg-12">
+             <%#= bootstrap_flash %>
             <%= yield %>
         </div>
       </div>

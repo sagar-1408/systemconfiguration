@@ -15,5 +15,7 @@
 //= require turbolinks
 //= require_tree .
 $(document).ready(function(){
-  $('.notice').slideDown(500).delay(3000).slideUp(500)
+  // $('.notice').slideDown(500).delay(3000).slideUp(500)
+  $('.notice').hide().delay(800).fadeIn(800).delay(4000).fadeOut(800)
+  $('#alert').hide().delay(800).fadeIn(800).delay(4000).fadeOut(800)
 });
