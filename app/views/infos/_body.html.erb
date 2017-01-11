@@ -15,9 +15,12 @@
         <td class="cntr"><%= info.camera %></td>
         <td class="cntr"><%= info.speaker %></td>
         <td class="cntr"><%= info.headphone %></td>
+      <% if current_user.email.eql?("sagar@thinkbiz.co.in")%>
         <td class="cntr"><%= link_to '', info, class: "btn btn-primary glyphicon glyphicon-eye-open" %></td>
         <td class="cntr"><%= link_to '', edit_info_path(info), class: "btn btn-warning glyphicon glyphicon-edit" %></td>
         <td class="cntr"><%= link_to '', info, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger glyphicon glyphicon-trash" %></td>
+      <% end %>
+
       </tr>
     <% end %>
   </tbody>

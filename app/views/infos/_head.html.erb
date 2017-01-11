@@ -14,6 +14,8 @@
     <th class="cntr">Camera</th>
     <th class="cntr">Speaker</th>
     <th class="cntr">Headphone</th>
-    <th colspan="3" class="cntr">Actions</th>
+    <% if current_user.email.eql?("sagar@thinkbiz.co.in")%>
+      <th colspan="3" class="cntr">Actions</th>
+    <% end %>
   </tr>
 </thead>
